@@ -4,7 +4,7 @@
 
     @isset($posts)
         @foreach ($posts as $post)
-            <div class="post">
+            <div class="article">
                 <div class="title">{{$post->title}}</div>
                 @if($post->status == "draft")
                     <div class="badge badge-warning">DRAFT</div>
