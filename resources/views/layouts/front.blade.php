@@ -38,11 +38,11 @@
                     <div class="header-right">
                         @php 
                             $email    = setting('site.email') ?? '';
-                            $dribbble = setting('dribbble') ?? '';
-                            $behance  = setting('behance') ?? '';
-                            $linkedin = setting('linkedin') ?? '';
-                            $twitter  = setting('twitter') ?? '';
-                            $github   = setting('github') ?? '';
+                            $dribbble = setting('site.dribbble') ?? '';
+                            $behance  = setting('site.behance') ?? '';
+                            $linkedin = setting('site.linkedin') ?? '';
+                            $twitter  = setting('site.twitter') ?? '';
+                            $github   = setting('site.github') ?? '';
                         @endphp
                         @if(!empty($email))
                             <a href="{{$email}}">
