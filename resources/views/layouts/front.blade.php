@@ -81,7 +81,11 @@
 
         <div class="content">
             @auth()
-                <a href="{{url('/admin')}}" class="btn btn-info">Admin Panel</a>
+                <div class="row">
+                    <div class="col d-flex justify-content-end">
+                        <a href="{{url('/admin')}}" class="btn btn-info">Admin Panel</a>
+                    </div>
+                </div>
             @endif
             @yield('content')
         </div>
