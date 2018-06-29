@@ -82,23 +82,11 @@
         <div class="content">
             <div class="row">
                 <div class="col d-flex">
-
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('main')}}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('portfolio.index')}}">Portfolio</a>
-                        </li>
-                        @auth()
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{url('/admin')}}" target="_blank">Admin</a>
-                        </li>
-                        @endif
-                    </ul>
-
-                    </div>
+                    <a href="{{route('main')}}" class="btn btn-warning" style="margin-right:10px">Home</a>
+                    <a href="{{route('portfolio.index')}}" class="btn btn-warning" style="margin-right:10px">Portfolio</a>
+                    <a href="{{url('/admin')}}" class="btn btn-warning" style="margin-right:10px">Admin</a>
                 </div>
+            </div>
             @yield('content')
         </div>
 
