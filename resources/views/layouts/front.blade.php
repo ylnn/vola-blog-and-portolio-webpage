@@ -84,7 +84,6 @@
                 <div class="col d-flex">
                     <a href="{{route('main')}}" class="btn btn-warning" style="margin-right:10px">Home</a>
                     <a href="{{route('portfolio.index')}}" class="btn btn-warning" style="margin-right:10px">Portfolio</a>
-                    <a href="{{url('/admin')}}" class="btn btn-warning" style="margin-right:10px">Admin</a>
                 </div>
             </div>
             @yield('content')
