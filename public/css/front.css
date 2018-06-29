@@ -23,6 +23,14 @@ body {
     margin-bottom: 50px;
 }
 
+.article-link {
+    color: rgb(70, 70, 70);
+}
+
+.article-link:hover {
+    color: #000;
+}
+
 .title {
     font-size: 27px;
     margin-bottom: 5px;
