@@ -8,7 +8,7 @@ Route::get('/post/{post}/{slug?}', 'FrontController@post')->name('post.detail');
 Route::get('/portfolio', 'FrontController@portfolio')->name('portfolio.index');
 
 // portfolio detail
-Route::get('/portfolio/{post}/{slug?}', 'FrontController@portfolioDetail')->name('portfolio.detail');
+Route::get('/portfolio/{portfolioID}/{slug?}', 'FrontController@portfolioDetail')->name('portfolio.detail');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

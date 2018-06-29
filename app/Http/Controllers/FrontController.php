@@ -30,7 +30,7 @@ class FrontController extends Controller
 
     public function portfolioDetail($portfolioID)
     {
-        $portfolio = Post::where('type', 'PORTFOLIO')->where('status', 'PUBLISHED')->first();
+        $portfolio = Post::where('id', $portfolioID)->where('type', 'PORTFOLIO')->where('status', 'PUBLISHED')->first();
 
         if(is_null($portfolio)){
             abort(404);
