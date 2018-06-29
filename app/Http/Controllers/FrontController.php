@@ -40,6 +40,6 @@ class FrontController extends Controller
         if($portfolio->status != 'PUBLISHED'){
             abort(404);
         }
-       return view('front.post', compact('portfolio'));
+       return view('front.portfolio', compact('portfolio'));
     }
 }
