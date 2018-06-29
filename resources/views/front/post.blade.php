@@ -3,6 +3,7 @@
 @section('content')
     <div class="article">
             <div class="title">{{$post->title}}</div>
+            <div class="date">{{$post->created_at->format('l, d F Y')}}</div>
             @if($post->status == "draft")
                 <div class="badge badge-warning">DRAFT</div>
             @endif
