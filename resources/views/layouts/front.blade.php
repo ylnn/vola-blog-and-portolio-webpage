@@ -80,13 +80,25 @@
         </div>
 
         <div class="content">
-            @auth()
-                <div class="row">
-                    <div class="col d-flex justify-content-end">
-                        <a href="{{url('/admin')}}" class="btn btn-info">Admin Panel</a>
+            <div class="row">
+                <div class="col d-flex">
+
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('main')}}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('portfolio.index')}}">Portfolio</a>
+                        </li>
+                        @auth()
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url('/admin')}}" target="_blank">Admin</a>
+                        </li>
+                        @endif
+                    </ul>
+
                     </div>
                 </div>
-            @endif
             @yield('content')
         </div>
 
