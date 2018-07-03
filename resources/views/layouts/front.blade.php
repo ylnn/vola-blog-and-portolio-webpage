@@ -80,12 +80,14 @@
         </div>
 
         <div class="content">
-            <div class="row">
-                <div class="col d-flex">
-                    <a href="{{route('main')}}" class="btn btn-warning" style="margin-right:10px">Home</a>
-                    <a href="{{route('portfolio.index')}}" class="btn btn-warning" style="margin-right:10px">Portfolio</a>
+            @if(setting('site.show-top-menu'))
+                <div class="row">
+                    <div class="col d-flex">
+                        <a href="{{route('main')}}" class="btn btn-warning" style="margin-right:10px">Home</a>
+                        <a href="{{route('portfolio.index')}}" class="btn btn-warning" style="margin-right:10px">Portfolio</a>
+                    </div>
                 </div>
-            </div>
+            @endif
             @yield('content')
         </div>
 

@@ -215,6 +215,17 @@ class SettingsTableSeeder extends Seeder
                 'order' => 2,
                 'group' => 'Site',
             ),
+            18 => 
+            array (
+                'id' => 20,
+                'key' => 'site.show-top-menu',
+                'display_name' => 'Show Top Menu',
+                'value' => 'Show top menu',
+                'details' => NULL,
+                'type' => 'checkbox',
+                'order' => 14,
+                'group' => 'Site',
+            ),
         ));
         
         
