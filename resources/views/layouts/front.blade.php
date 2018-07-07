@@ -39,6 +39,7 @@
                     <div class="header-right">
                         @php 
                             $email    = setting('site.email') ?? '';
+                            $facebook = setting('site.facebook') ?? '';
                             $dribbble = setting('site.dribbble') ?? '';
                             $behance  = setting('site.behance') ?? '';
                             $linkedin = setting('site.linkedin') ?? '';
@@ -50,9 +51,14 @@
                                     <img width="30" src="/images/mail.svg" alt="Mail">
                             </a>
                         @endif
+                        @if(!empty($facebook))
+                            <a href="{{$facebook}}">
+                                    <img width="30" src="/images/facebook.svg" alt="Facebook">
+                            </a>
+                        @endif
                         @if(!empty($github))
                             <a href="{{$github}}">
-                                    <img width="30" src="/images/github.svg" alt="Mail">
+                                    <img width="30" src="/images/github.svg" alt="Github">
                             </a>
                         @endif
                         @if(!empty($behance))
