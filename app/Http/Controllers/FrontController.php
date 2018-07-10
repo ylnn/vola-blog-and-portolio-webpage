@@ -9,7 +9,7 @@ class FrontController extends Controller
 {
     public function index()
     {
-        $posts = Post::where('type', 'POST')->where('status', 'published')->latest()->get();
+        $posts = Post::where('type', 'POST')->latest()->get();
         return view('front.home', compact('posts'));
     }
 
