@@ -16,7 +16,7 @@ class FrontController extends Controller
     public function post(Post $post)
     {
         //check published
-        if($post->status != 'PUBLISHED'){
+        if((!auth()->check()) and ($post->status != 'PUBLISHED')) {
             abort(404);
         }
        return view('front.post', compact('post'));

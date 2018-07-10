@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="article">
+            @if($post->status == "DRAFT")
+                <div class="badge badge-2x badge-warning">DRAFT</div>
+            @endif
             <div class="title">{{$post->title}}</div>
             <div class="date">{{$post->created_at->format('l, d F Y')}}</div>
             @if($post->status == "draft")
