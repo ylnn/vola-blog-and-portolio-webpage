@@ -24,7 +24,7 @@ class FrontController extends Controller
 
     public function portfolio()
     {
-        $portfolios = Post::where('type', 'PORTFOLIO')->where('status', 'published')->latest()->get();
+        $portfolios = Post::where('type', 'PORTFOLIO')->where('status', 'published')->orderBy('order', 'ASC')->get();
         return view('front.portfolios', compact('portfolios'));
     }
 
