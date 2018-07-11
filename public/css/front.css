@@ -38,6 +38,10 @@ body {
     color: #000;
 }
 
+.summary {
+    padding-top: 10px;
+}
+
 .title {
     font-size: 32px;
     margin-bottom: 5px;
