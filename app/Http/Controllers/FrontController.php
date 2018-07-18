@@ -8,7 +8,6 @@ use Spatie\SchemaOrg\Schema;
 use TCG\Voyager\Facades\Voyager;
 use Carbon\Carbon;
 use TCG\Voyager\Models\Setting;
-use Doctrine\DBAL\Schema\Schema;
 
 class FrontController extends Controller
 {
@@ -41,9 +40,9 @@ class FrontController extends Controller
             ->datePublished($post->created_at)
             ->dateModified($post->updated_at)
             ->image(Voyager::image($post->image))
-            // ->author(Schema::person()->addProperties();
             ->author(setting('site.site-brand'))
-            ->publisher([Schema::organization(), setting('site.title')]);
+            // ->publisher(setting('site.title'))
+            ->publisher(Schema::person()->addProperties(['name' => setting('site.title')]));
 
        return view('front.post', compact('post', 'creativeWork'));
     }
