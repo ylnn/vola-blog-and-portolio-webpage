@@ -39,9 +39,10 @@ class FrontController extends Controller
             ->text($post->body)
             ->datePublished($post->created_at)
             ->dateModified($post->updated_at)
+            ->image(Voyager::image($post->image))
+            // ->author(Schema::person()->addProperties();
             ->author(setting('site.site-brand'))
-            ->publisher(setting('site.title'))
-            ;
+            ->publisher(setting('site.title'));
 
        return view('front.post', compact('post', 'creativeWork'));
     }
