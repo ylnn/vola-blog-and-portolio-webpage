@@ -2,15 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Http\Request;
+use Spatie\SchemaOrg\Schema;
+use TCG\Voyager\Facades\Voyager;
+use Carbon\Carbon;
+use TCG\Voyager\Models\Setting;
 
 class FrontController extends Controller
 {
     public function index()
     {
         $posts = Post::where('type', 'POST')->latest()->get();
-        return view('front.home', compact('posts'));
+
+        $url = url("/");
+        $siteSchema = Schema::webSite()
+            ->name(setting('site.title'))
+            ->description(setting('site.description'))
+            ->url($url)
+            ->dateModified($posts[0]->updated_at)
+            ->copyrightYear(2018)
+            ;
+
+        return view('front.home', compact('posts', 'siteSchema'));
     }
 
     public function post(Post $post)
@@ -19,7 +33,14 @@ class FrontController extends Controller
         if((!auth()->check()) and ($post->status != 'PUBLISHED')) {
             abort(404);
         }
-       return view('front.post', compact('post'));
+
+        $creativeWork = Schema::article()
+            ->headline($post->title)
+            ->text($post->body)
+            ->datePublished($post->created_at)
+            ->dateModified($post->updated_at);
+
+       return view('front.post', compact('post', 'creativeWork'));
     }
 
     public function portfolio()

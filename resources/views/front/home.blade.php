@@ -35,3 +35,7 @@
         @endforeach
     @endif
 @endsection
+
+@push('scripts')
+    {!! $siteSchema->toScript() !!}
+@endpush

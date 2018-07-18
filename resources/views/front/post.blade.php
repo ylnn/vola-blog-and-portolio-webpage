@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="article">
+
             @if($post->status == "DRAFT")
                 <div class="badge badge-2x badge-warning">DRAFT</div>
             @endif
@@ -15,3 +16,7 @@
             <div class="summary">{!! $post->body !!}</div>
         </div>
 @endsection
+
+@push('scripts')
+    {!! $creativeWork->toScript() !!}
+@endpush
