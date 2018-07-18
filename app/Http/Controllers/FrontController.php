@@ -8,6 +8,7 @@ use Spatie\SchemaOrg\Schema;
 use TCG\Voyager\Facades\Voyager;
 use Carbon\Carbon;
 use TCG\Voyager\Models\Setting;
+use Doctrine\DBAL\Schema\Schema;
 
 class FrontController extends Controller
 {
@@ -42,7 +43,7 @@ class FrontController extends Controller
             ->image(Voyager::image($post->image))
             // ->author(Schema::person()->addProperties();
             ->author(setting('site.site-brand'))
-            ->publisher(setting('site.title'));
+            ->publisher([Schema::organization(), setting('site.title')]);
 
        return view('front.post', compact('post', 'creativeWork'));
     }
