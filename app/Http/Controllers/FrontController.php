@@ -42,7 +42,7 @@ class FrontController extends Controller
             ->image(Voyager::image($post->image))
             ->author(setting('site.site-brand'))
             // ->publisher(setting('site.title'))
-            ->publisher(Schema::person()->addProperties(['name' => setting('site.title')]));
+            ->publisher(Schema::organization()->addProperties(['name' => setting('site.title')]));
 
        return view('front.post', compact('post', 'creativeWork'));
     }
