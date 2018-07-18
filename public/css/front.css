@@ -38,6 +38,12 @@ body {
     color: #000;
 }
 
+.article img {
+    display:block; 
+    max-width:100%; 
+    height:auto;
+}
+
 .summary {
     padding-top: 10px;
 }
