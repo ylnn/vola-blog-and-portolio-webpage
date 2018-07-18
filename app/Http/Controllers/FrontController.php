@@ -38,7 +38,10 @@ class FrontController extends Controller
             ->headline($post->title)
             ->text($post->body)
             ->datePublished($post->created_at)
-            ->dateModified($post->updated_at);
+            ->dateModified($post->updated_at)
+            ->author(setting('site.site-brand'))
+            ->publisher(setting('site.title'))
+            ;
 
        return view('front.post', compact('post', 'creativeWork'));
     }
