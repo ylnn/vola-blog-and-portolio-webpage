@@ -18,7 +18,8 @@
     @else
         <title>{{setting('site.title') ?? ''}}</title>
     @endif
-
+    <meta name="description" content="{{setting('site.general_seo_desc')}}">
+    <meta name="keywords" content="{{setting('site.general_seo_keywords')}}">
 </head>
 <body>
     <div class="container">
