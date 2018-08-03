@@ -18,7 +18,7 @@
                 @isset($post->image)
                     <div class="image">
                         <a class="article-link" href="{{ route('post.detail', [$post->id, $post->slug]) }}">
-                            <img src="{{Voyager::image($post->thumbnail('medium'))}}" class="img-fluid" />
+                            <img src="{{Voyager::image($post->image)}}" class="img-fluid" />
                         </a>
                     </div>
                 @endif
