@@ -53,7 +53,8 @@ class FrontController extends Controller
     public function portfolio()
     {
         $portfolios = Post::where('type', 'PORTFOLIO')->where('status', 'published')->orderBy('order', 'ASC')->get();
-        return view('front.portfolios', compact('portfolios'));
+        $title = setting('site.portfolio-title') ?? 'PORTFOLIO';
+        return view('front.portfolios', compact('portfolios', 'title'));
     }
 
     public function portfolioDetail($portfolioID)
