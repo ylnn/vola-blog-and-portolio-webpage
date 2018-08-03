@@ -44,7 +44,10 @@ class FrontController extends Controller
             // ->publisher(setting('site.title'))
             ->publisher(Schema::organization()->addProperties(['name' => setting('site.title')]));
 
-       return view('front.post', compact('post', 'creativeWork'));
+            $pre = Post::where('id', '<', $post->id)->where('status', 'PUBLISHED')->first();
+            $next = Post::where('id', '>', $post->id)->where('status', 'PUBLISHED')->first();
+
+            return view('front.post', compact('post', 'creativeWork', 'pre', 'next'));
     }
 
     public function portfolio()
