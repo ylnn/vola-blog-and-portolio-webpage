@@ -14,6 +14,19 @@
             <img src="{{Voyager::image($post->image)}}" class="img-fluid" />
 
             <div class="summary">{!! $post->body !!}</div>
+
+            <div class="bottom-links pt-3 d-flex justify-content-between"  >
+                @isset($pre)
+                    <div>
+                        <a href="{{route('post.detail', [$pre->id, $pre->slug])}}" class="bottom-link"> << {{$pre->title}}</a>
+                    </div>
+                @endif
+                @isset($next)
+                    <div>
+                        <a href="{{route('post.detail', [$next->id, $next->slug])}}" class="bottom-link">{{$next->title}} >> </a>
+                    </div>
+                @endif
+            </div>
         </div>
 @endsection
 

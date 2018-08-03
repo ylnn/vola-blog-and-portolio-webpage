@@ -61,6 +61,11 @@ body {
     margin-top: 10px;
 }
 
+.bottom-link {
+    font-size: 18px;
+    color: grey;
+}
+
 .footer {
     margin-top: 50px;
     margin-bottom: 50px;
