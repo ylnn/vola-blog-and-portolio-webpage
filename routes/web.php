@@ -13,3 +13,5 @@ Route::get('/portfolio/{portfolioID}/{slug?}', 'FrontController@portfolioDetail'
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('/update_sitemap', 'FrontController@updateSitemap');

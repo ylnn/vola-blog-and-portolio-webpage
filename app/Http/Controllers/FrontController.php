@@ -6,8 +6,8 @@ use App\Post;
 use Illuminate\Http\Request;
 use Spatie\SchemaOrg\Schema;
 use TCG\Voyager\Facades\Voyager;
-use Carbon\Carbon;
-use TCG\Voyager\Models\Setting;
+use Spatie\Sitemap\SitemapGenerator;
+use Illuminate\Support\Facades\URL;
 
 class FrontController extends Controller
 {
@@ -69,5 +69,18 @@ class FrontController extends Controller
             abort(404);
         }
        return view('front.portfolio', compact('portfolio'));
+    }
+    
+
+    public function updateSitemap()
+    {
+        $siteUrl = URL::to('/');
+        $path = storage_path('app/public/sitemap.xml');
+        try {
+            SitemapGenerator::create($siteUrl)->writeToFile($path);
+        } catch(Exception $e) {
+            return 'ERR - sitemap CANNOT created.';
+        }
+        return 'OK - sitemap created.';
     }
 }
