@@ -1,0 +1,70 @@
+body {
+    font-weight: 200;
+}
+
+
+.header {
+    font-size: 30px;
+    padding-top: 50px;
+    margin-bottom: 30px;
+}
+
+.laravel-developer-header {
+    font-size: 20px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #000;
+}
+
+.article {
+    padding-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+
+.article-link {
+    color: rgb(70, 70, 70);
+}
+
+.article-link:hover {
+    color: #000;
+}
+
+.article img {
+    display:block; 
+    max-width:100%; 
+    height:auto;
+}
+
+.summary {
+    padding-top: 10px;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.date {
+    margin-bottom: 10px;
+    color: grey;
+}
+.read-more {
+    margin-top: 10px;
+}
+
+.bottom-link {
+    font-size: 18px;
+    color: grey;
+}
+
+.footer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
