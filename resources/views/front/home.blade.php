@@ -7,7 +7,7 @@
             @if( ( $p->status == "PUBLISHED" ) or (auth()->check()))
             <div class="article">
                 <div class="title">
-                    <a class="article-link" href="{{ route('post.detail', [$p->id, $p->slug]) }}">
+                    <a class="article-link" href="{{ route('post.detail', [$p->slug]) }}">
                         {{$p->title}}
                     </a>
                 </div>
@@ -17,18 +17,18 @@
                 <div class="date">{{$p->created_at->format('l, d F Y')}}</div>
                 @isset($p->image)
                     <div class="image">
-                        <a class="article-link" href="{{ route('post.detail', [$p->id, $p->slug]) }}">
+                        <a class="article-link" href="{{ route('post.detail', [$p->slug]) }}">
                             <img src="{{Voyager::image($p->image)}}" class="img-fluid" />
                         </a>
                     </div>
                 @endif
                 <div class="summary">
-                    <a class="article-link" href="{{ route('post.detail', [$p->id, $p->slug]) }}">
+                    <a class="article-link" href="{{ route('post.detail', [$p->slug]) }}">
                         {{ $p->excerpt}}
                     </a>
                 </div>
                 <div class="read-more">
-                    <a href="{{ route('post.detail', [$p->id, $p->slug]) }}" class="btn btn-dark">Read more...</a>
+                    <a href="{{ route('post.detail', [$p->slug]) }}" class="btn btn-dark">Read more...</a>
                 </div>
             </div>
             @endif

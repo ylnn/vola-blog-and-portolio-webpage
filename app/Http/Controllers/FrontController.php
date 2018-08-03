@@ -27,8 +27,9 @@ class FrontController extends Controller
         return view('front.home', compact('posts', 'siteSchema'));
     }
 
-    public function post(Post $post)
+    public function post($slug)
     {
+        $post = Post::where('slug', $slug)->firstOrFail();
         //check published
         if((!auth()->check()) and ($post->status != 'PUBLISHED')) {
             abort(404);
@@ -49,6 +50,15 @@ class FrontController extends Controller
 
             return view('front.post', compact('post', 'creativeWork', 'pre', 'next'));
     }
+
+    public function postRedirect(Post $post)
+    {
+        if(($post) && ($post->status == 'PUBLISHED')){
+            return redirect(route('post.detail', [$post->slug]), 301);
+        }
+        abort(404);
+    }
+
 
     public function portfolio()
     {
