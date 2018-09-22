@@ -13,6 +13,11 @@ class FrontController extends Controller
 {
     public function index()
     {
+        return view('front.home');
+    }
+
+    public function blog()
+    {
         $posts = Post::where('type', 'POST')->latest()->get();
 
         $url = url("/");
@@ -24,7 +29,7 @@ class FrontController extends Controller
             ->copyrightYear(2018)
             ;
 
-        return view('front.home', compact('posts', 'siteSchema'));
+        return view('front.blog', compact('posts', 'siteSchema'));
     }
 
     public function post($slug)

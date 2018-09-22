@@ -95,13 +95,14 @@
 
         <div class="content">
             @if(setting('site.show-top-menu'))
-                <div class="row">
-                    <div class="col d-flex">
-                        <a href="{{route('main')}}" class="btn btn-warning" style="margin-right:10px">Home</a>
-                        <a href="{{route('portfolio.index')}}" class="btn btn-warning" style="margin-right:10px">Portfolio</a>
-                    </div>
+            <div class="row">
+                <div class="col d-flex">
+                    <a href="{{route('main')}}" class="menu-link-item @if(Route::currentRouteName() == 'main') font-weight-bold @endif"   style="margin-right:10px">Hakkımda</a>
+                    <a href="{{route('blog')}}" class="menu-link-item @if(Route::currentRouteName() == 'blog') font-weight-bold @endif"  style="margin-right:10px">Blog</a>
                 </div>
+            </div>
             @endif
+            
             @yield('content')
         </div>
 

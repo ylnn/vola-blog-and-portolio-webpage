@@ -3,6 +3,9 @@
 // home
 Route::get('/', 'FrontController@index')->name('main');
 
+//blog
+Route::get('/blog', 'FrontController@blog')->name('blog');
+
 // portfolio index
 Route::get('/portfolio', 'FrontController@portfolio')->name('portfolio.index');
 
